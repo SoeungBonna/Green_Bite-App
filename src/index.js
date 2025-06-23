@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client"; // 🆕 React 18
 import "./index.css";
 import App from "./App";
 import { makeServer } from "./server";
@@ -8,9 +8,14 @@ import { DataProvider } from "./contexts/DataProvider";
 import { AuthProvider } from "./contexts/AuthProvider";
 import { UserProvider } from "./contexts/UserDataProvider";
 import { AddressProvider } from "./contexts/AddressProvider";
-makeServer();
 
-ReactDOM.render(
+makeServer(); // Start MirageJS
+
+// 🆕 This replaces ReactDOM.render
+const container = document.getElementById("root");
+const root = createRoot(container);
+
+root.render(
   <React.StrictMode>
     <Router>
       <AuthProvider>
@@ -23,6 +28,5 @@ ReactDOM.render(
         </DataProvider>
       </AuthProvider>
     </Router>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

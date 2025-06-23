@@ -63,25 +63,27 @@ export function makeServer({ environment = "development" } = {}) {
         server.create("product", { ...item });
       });
 
-      users.forEach((item) =>
-        server.create("user", {
-          ...item,
-          cart: [],
-          wishlist: [],
-          addressList: [
-            {
-              _id: uuid(),
-              name: "",
-              street: "4254 Central Pkwy",
-              city: "Port Credit",
-              state: "Ontario",
-              country: "Canada",
-              pincode: "L5G 1K2",
-              phone: "905-278-0724",
-            },
-          ],
-        })
-      );
+      users.forEach((item, index) =>
+  server.create("user", {
+    ...item,
+    encodedToken: `sample_token_${index + 1}`, // Unique token
+    cart: [],
+    wishlist: [],
+    addressList: [
+      {
+        _id: uuid(),
+        name: "",
+        street: "4254 Central Pkwy",
+        city: "Port Credit",
+        state: "Ontario",
+        country: "Canada",
+        pincode: "L5G 1K2",
+        phone: "905-278-0724",
+      },
+    ],
+  })
+);
+
 
       categories.forEach((item) => server.create("category", { ...item }));
     },
