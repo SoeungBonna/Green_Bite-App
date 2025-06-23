@@ -9,7 +9,13 @@ import { AuthProvider } from "./contexts/AuthProvider";
 import { UserProvider } from "./contexts/UserDataProvider";
 import { AddressProvider } from "./contexts/AddressProvider";
 
-makeServer(); // Start MirageJS
+if (
+  process.env.NODE_ENV === "development" ||
+  process.env.REACT_APP_ENABLE_MIRAGE === "true"
+) {
+  makeServer({ environment: "development" });
+}
+
 
 // 🆕 This replaces ReactDOM.render
 const container = document.getElementById("root");
