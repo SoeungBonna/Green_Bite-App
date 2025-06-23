@@ -12,22 +12,20 @@ export const Footer = () => {
 
   return (
     <div className="footer">
-      <small> &copy; {copyrightYear} TheWalk</small>
+      <small> &copy; {copyrightYear} GreenBite</small>
       <div className="social-links">
-        <Link to="https://twitter.com/LThomorn" target="_blank">
-          <BsTwitter />
-        </Link>
+
         <Link
-          to="https://github.com/Mxrn-Cyber?tab=repositories"
+          to="https://github.com/SoeungBonna/Green_Bite-App.git"
           target="_blank"
         >
           <ImGithub />
         </Link>
-        <Link to="https://www.facebook.com/morn.scripter/" target="_blank">
+        <Link to="https://www.facebook.com/share/1GYstvQ8Yk/?mibextid=wwXIfr" target="_blank">
           <SiFacebook />
         </Link>
         <Link
-          to="https://www.tiktok.com/@taki5038?_t=ZS-8xPsXDwyKkp&_r=1"
+          to="https://www.tiktok.com/@su_jun_ho?_t=ZS-8xRiK7xiMYD&_r=1"
           target="_blank"
         >
           <FaTiktok />
