@@ -5,7 +5,7 @@ nav {
   justify-content: space-between;
   padding: 1rem;
   width: 100%;
-  background-color: black;
+  background-color: rgba(10, 72, 1, 0.722);
   top: 0;
   z-index: 3;
 }
@@ -60,7 +60,7 @@ input:focus {
   position: relative;
 }
 .nav-link-container > *:hover {
-  background-color: rgb(42, 42, 42);
+  background-color: rgb(0, 0, 0);
   border: 1px solid rgb(42, 42, 42);
 }
 
@@ -127,7 +127,7 @@ input:focus {
 
 .nav-input-search button {
   border: none;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   padding: 0.5rem 1rem;
   border-radius: 15px;
   margin-top: 0.1em;
